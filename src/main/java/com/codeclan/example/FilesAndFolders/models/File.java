@@ -2,6 +2,8 @@ package com.codeclan.example.FilesAndFolders.models;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "files")
 public class File {
 
     @Id
