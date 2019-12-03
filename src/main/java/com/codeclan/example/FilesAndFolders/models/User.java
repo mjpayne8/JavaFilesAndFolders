@@ -1,9 +1,6 @@
 package com.codeclan.example.FilesAndFolders.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +14,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "folders")
+    @OneToMany(mappedBy = "user")
     private List<Folder> folders;
 
     public User(String name) {

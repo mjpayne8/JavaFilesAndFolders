@@ -1,9 +1,6 @@
 package com.codeclan.example.FilesAndFolders.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 public class File {
 
@@ -21,7 +18,8 @@ public class File {
     @Column(name = "size")
     private int size;
 
-    @Column(name = "folder")
+    @ManyToOne
+    @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
 
     public File(String name, String extension, int size, Folder folder) {
